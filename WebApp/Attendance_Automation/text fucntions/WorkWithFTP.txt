@@ -1,0 +1,77 @@
+private bool Upload(string ftpServer, string userName, string password, string filename)
+        {
+          
+                bool fileUploaded = false;
+                string reply = "Success";
+                try
+                {
+                    using (System.Net.WebClient client = new System.Net.WebClient()) //System.Net.WebClient client = new System.Net.WebClient()
+                    {
+                        client.Credentials = new System.Net.NetworkCredential(userName, password);
+                        client.Proxy = new WebProxy();
+                        FileInfo fi = new FileInfo(filename);
+                        client.UploadFile(ftpServer + "//" + fi.Name, "STOR", filename);
+                        fileUploaded = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    reply = ex.Message;
+                    fileUploaded = false;
+                }
+                return fileUploaded;
+            }
+        
+        }
+
+//---------------------------------------------------------------------------------------------------------------
+ private bool CheckIfFileExistsOnServer(string fileName)
+        {
+            
+            var request = (FtpWebRequest)WebRequest.Create("File name");
+            request.Credentials = new NetworkCredential("Username","Password");
+            request.Method = WebRequestMethods.Ftp.GetFileSize;
+
+            try
+            {
+                FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+                return true;
+            }
+            catch (WebException ex)
+            {
+                FtpWebResponse response = (FtpWebResponse)ex.Response;
+                if (response.StatusCode == FtpStatusCode.ActionNotTakenFileUnavailable)
+                    return false;
+            }
+            return false;
+        }
+//---------------------------------------------------------------------------------------------------------------------
+
+public bool DeleteFileOnFtpServer(Uri serverUri, string ftpUsername, string ftpPassword)
+        {
+            try
+            {
+                // The serverUri parameter should use the ftp:// scheme.
+                // It contains the name of the server file that is to be deleted.
+                // Example: ftp://contoso.com/someFile.txt.
+                // 
+
+                if (serverUri.Scheme != Uri.UriSchemeFtp)
+                {
+                    return false;
+                }
+                // Get the object used to communicate with the server.
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(serverUri);
+                request.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                request.Method = WebRequestMethods.Ftp.DeleteFile;
+
+                FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+                //Console.WriteLine("Delete status: {0}", response.StatusDescription);
+                response.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }

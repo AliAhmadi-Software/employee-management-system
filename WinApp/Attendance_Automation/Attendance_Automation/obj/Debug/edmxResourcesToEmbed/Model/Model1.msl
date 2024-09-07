@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Attendance_DBModelStoreContainer" CdmEntityContainer="Attendance_DBEntities">
+    <EntitySetMapping Name="Tbl_Attendance">
+      <EntityTypeMapping TypeName="Attendance_DBModel.Tbl_Attendance">
+        <MappingFragment StoreEntitySet="Tbl_Attendance">
+          <ScalarProperty Name="Leave_Time" ColumnName="Leave_Time" />
+          <ScalarProperty Name="AttendanceID" ColumnName="AttendanceID" />
+          <ScalarProperty Name="PersonelID_FK" ColumnName="PersonelID_FK" />
+          <ScalarProperty Name="AttendanceDate" ColumnName="AttendanceDate" />
+          <ScalarProperty Name="Enter_Time" ColumnName="Enter_Time" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Date_Submit" ColumnName="Date_Submit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Leaves">
+      <EntityTypeMapping TypeName="Attendance_DBModel.Tbl_Leaves">
+        <MappingFragment StoreEntitySet="Tbl_Leaves">
+          <ScalarProperty Name="LeaveID" ColumnName="LeaveID" />
+          <ScalarProperty Name="PersonelID_FK" ColumnName="PersonelID_FK" />
+          <ScalarProperty Name="From_Date" ColumnName="From_Date" />
+          <ScalarProperty Name="Until_Date" ColumnName="Until_Date" />
+          <ScalarProperty Name="Difference_Date" ColumnName="Difference_Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Date_Submit" ColumnName="Date_Submit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_LeavesTime">
+      <EntityTypeMapping TypeName="Attendance_DBModel.Tbl_LeavesTime">
+        <MappingFragment StoreEntitySet="Tbl_LeavesTime">
+          <ScalarProperty Name="LeaveTimeID" ColumnName="LeaveTimeID" />
+          <ScalarProperty Name="PersonelID_FK" ColumnName="PersonelID_FK" />
+          <ScalarProperty Name="From_Hours" ColumnName="From_Hours" />
+          <ScalarProperty Name="Until_Hours" ColumnName="Until_Hours" />
+          <ScalarProperty Name="Difference_Time" ColumnName="Difference_Time" />
+          <ScalarProperty Name="LeaveDate" ColumnName="LeaveDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Date_Submit" ColumnName="Date_Submit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Missions">
+      <EntityTypeMapping TypeName="Attendance_DBModel.Tbl_Missions">
+        <MappingFragment StoreEntitySet="Tbl_Missions">
+          <ScalarProperty Name="MissionID" ColumnName="MissionID" />
+          <ScalarProperty Name="PersonelID_FK" ColumnName="PersonelID_FK" />
+          <ScalarProperty Name="Date_Mission" ColumnName="Date_Mission" />
+          <ScalarProperty Name="From_Hours" ColumnName="From_Hours" />
+          <ScalarProperty Name="Until_Hours" ColumnName="Until_Hours" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Date_Sumbit" ColumnName="Date_Sumbit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Persmissions">
+      <EntityTypeMapping TypeName="Attendance_DBModel.Tbl_Persmissions">
+        <MappingFragment StoreEntitySet="Tbl_Persmissions">
+          <ScalarProperty Name="PermissionID" ColumnName="PermissionID" />
+          <ScalarProperty Name="UserID_FK" ColumnName="UserID_FK" />
+          <ScalarProperty Name="Users" ColumnName="Users" />
+          <ScalarProperty Name="Personels" ColumnName="Personels" />
+          <ScalarProperty Name="Mission" ColumnName="Mission" />
+          <ScalarProperty Name="Leaves" ColumnName="Leaves" />
+          <ScalarProperty Name="LeavesTime" ColumnName="LeavesTime" />
+          <ScalarProperty Name="Attendance" ColumnName="Attendance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Personels">
+      <EntityTypeMapping TypeName="Attendance_DBModel.Tbl_Personels">
+        <MappingFragment StoreEntitySet="Tbl_Personels">
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Personel_Image" ColumnName="Personel_Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_ReportMission">
+      <EntityTypeMapping TypeName="Attendance_DBModel.Tbl_ReportMission">
+        <MappingFragment StoreEntitySet="Tbl_ReportMission">
+          <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+          <ScalarProperty Name="PersonelID_FK" ColumnName="PersonelID_FK" />
+          <ScalarProperty Name="MissionID_FK" ColumnName="MissionID_FK" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Roles">
+      <EntityTypeMapping TypeName="Attendance_DBModel.Tbl_Roles">
+        <MappingFragment StoreEntitySet="Tbl_Roles">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_SettingApp">
+      <EntityTypeMapping TypeName="Attendance_DBModel.Tbl_SettingApp">
+        <MappingFragment StoreEntitySet="Tbl_SettingApp">
+          <ScalarProperty Name="Sett_ID" ColumnName="Sett_ID" />
+          <ScalarProperty Name="ExpireDate_Host" ColumnName="ExpireDate_Host" />
+          <ScalarProperty Name="LoginFTP" ColumnName="LoginFTP" />
+          <ScalarProperty Name="FtpUsername" ColumnName="FtpUsername" />
+          <ScalarProperty Name="FtpPassword" ColumnName="FtpPassword" />
+          <ScalarProperty Name="FtpAddress" ColumnName="FtpAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Users">
+      <EntityTypeMapping TypeName="Attendance_DBModel.Tbl_Users">
+        <MappingFragment StoreEntitySet="Tbl_Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleID_FK" ColumnName="RoleID_FK" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

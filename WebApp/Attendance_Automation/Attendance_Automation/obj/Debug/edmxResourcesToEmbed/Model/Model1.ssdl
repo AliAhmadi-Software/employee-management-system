@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Attendance_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Tbl_Attendance">
+    <Key>
+      <PropertyRef Name="AttendanceID" />
+    </Key>
+    <Property Name="AttendanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelID_FK" Type="int" />
+    <Property Name="AttendanceDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Enter_Time" Type="nvarchar" MaxLength="50" />
+    <Property Name="Leave_Time" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="150" />
+    <Property Name="Date_Submit" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Leaves">
+    <Key>
+      <PropertyRef Name="LeaveID" />
+    </Key>
+    <Property Name="LeaveID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelID_FK" Type="int" />
+    <Property Name="From_Date" Type="nvarchar" MaxLength="20" />
+    <Property Name="Until_Date" Type="nvarchar" MaxLength="20" />
+    <Property Name="Difference_Date" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date_Submit" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_LeavesTime">
+    <Key>
+      <PropertyRef Name="LeaveTimeID" />
+    </Key>
+    <Property Name="LeaveTimeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelID_FK" Type="int" />
+    <Property Name="From_Hours" Type="nvarchar" MaxLength="20" />
+    <Property Name="Until_Hours" Type="nvarchar" MaxLength="20" />
+    <Property Name="Difference_Time" Type="time" Precision="7" />
+    <Property Name="LeaveDate" Type="nvarchar" MaxLength="20" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date_Submit" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Missions">
+    <Key>
+      <PropertyRef Name="MissionID" />
+    </Key>
+    <Property Name="MissionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelID_FK" Type="int" />
+    <Property Name="Date_Mission" Type="nvarchar" MaxLength="20" />
+    <Property Name="From_Hours" Type="nvarchar" MaxLength="20" />
+    <Property Name="Until_Hours" Type="nvarchar" MaxLength="20" />
+    <Property Name="Destination" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date_Sumbit" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Persmissions">
+    <Key>
+      <PropertyRef Name="PermissionID" />
+    </Key>
+    <Property Name="PermissionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID_FK" Type="int" />
+    <Property Name="Users" Type="bit" />
+    <Property Name="Personels" Type="bit" />
+    <Property Name="Mission" Type="bit" />
+    <Property Name="Leaves" Type="bit" />
+    <Property Name="LeavesTime" Type="bit" />
+    <Property Name="Attendance" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Personels">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+    </Key>
+    <Property Name="PersonelID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Family" Type="nvarchar" MaxLength="30" />
+    <Property Name="Post" Type="nvarchar" MaxLength="20" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="Personel_Image" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Tbl_ReportMission">
+    <Key>
+      <PropertyRef Name="ReportID" />
+    </Key>
+    <Property Name="ReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelID_FK" Type="int" />
+    <Property Name="MissionID_FK" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="ReportDate" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Tbl_Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_SettingApp">
+    <Key>
+      <PropertyRef Name="Sett_ID" />
+    </Key>
+    <Property Name="Sett_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpireDate_Host" Type="nvarchar" MaxLength="20" />
+    <Property Name="LoginFTP" Type="nvarchar" MaxLength="150" />
+    <Property Name="FtpUsername" Type="nvarchar" MaxLength="100" />
+    <Property Name="FtpPassword" Type="nvarchar" MaxLength="100" />
+    <Property Name="FtpAddress" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Tbl_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleID_FK" Type="int" />
+    <Property Name="Username" Type="nvarchar" MaxLength="30" />
+    <Property Name="Password" Type="nvarchar" MaxLength="150" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Family" Type="nvarchar" MaxLength="30" />
+    <Property Name="LastLogin" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Tbl_Attendance_Tbl_Personels">
+    <End Role="Tbl_Personels" Type="Self.Tbl_Personels" Multiplicity="0..1" />
+    <End Role="Tbl_Attendance" Type="Self.Tbl_Attendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Personels">
+        <PropertyRef Name="PersonelID" />
+      </Principal>
+      <Dependent Role="Tbl_Attendance">
+        <PropertyRef Name="PersonelID_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Leaves_Tbl_Personels">
+    <End Role="Tbl_Personels" Type="Self.Tbl_Personels" Multiplicity="0..1" />
+    <End Role="Tbl_Leaves" Type="Self.Tbl_Leaves" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Personels">
+        <PropertyRef Name="PersonelID" />
+      </Principal>
+      <Dependent Role="Tbl_Leaves">
+        <PropertyRef Name="PersonelID_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_LeavesTime_Tbl_Personels">
+    <End Role="Tbl_Personels" Type="Self.Tbl_Personels" Multiplicity="0..1" />
+    <End Role="Tbl_LeavesTime" Type="Self.Tbl_LeavesTime" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Personels">
+        <PropertyRef Name="PersonelID" />
+      </Principal>
+      <Dependent Role="Tbl_LeavesTime">
+        <PropertyRef Name="PersonelID_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Missions_Tbl_Personels">
+    <End Role="Tbl_Personels" Type="Self.Tbl_Personels" Multiplicity="0..1" />
+    <End Role="Tbl_Missions" Type="Self.Tbl_Missions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Personels">
+        <PropertyRef Name="PersonelID" />
+      </Principal>
+      <Dependent Role="Tbl_Missions">
+        <PropertyRef Name="PersonelID_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Persmissions_Tbl_Users">
+    <End Role="Tbl_Users" Type="Self.Tbl_Users" Multiplicity="0..1" />
+    <End Role="Tbl_Persmissions" Type="Self.Tbl_Persmissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Tbl_Persmissions">
+        <PropertyRef Name="UserID_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_ReportMission_Tbl_Missions">
+    <End Role="Tbl_Missions" Type="Self.Tbl_Missions" Multiplicity="0..1" />
+    <End Role="Tbl_ReportMission" Type="Self.Tbl_ReportMission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Missions">
+        <PropertyRef Name="MissionID" />
+      </Principal>
+      <Dependent Role="Tbl_ReportMission">
+        <PropertyRef Name="MissionID_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_ReportMission_Tbl_Personels">
+    <End Role="Tbl_Personels" Type="Self.Tbl_Personels" Multiplicity="0..1" />
+    <End Role="Tbl_ReportMission" Type="Self.Tbl_ReportMission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Personels">
+        <PropertyRef Name="PersonelID" />
+      </Principal>
+      <Dependent Role="Tbl_ReportMission">
+        <PropertyRef Name="PersonelID_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Users_Tbl_Roles">
+    <End Role="Tbl_Roles" Type="Self.Tbl_Roles" Multiplicity="0..1" />
+    <End Role="Tbl_Users" Type="Self.Tbl_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Roles">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="Tbl_Users">
+        <PropertyRef Name="RoleID_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Attendance_DBModelStoreContainer">
+    <EntitySet Name="Tbl_Attendance" EntityType="Self.Tbl_Attendance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Leaves" EntityType="Self.Tbl_Leaves" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_LeavesTime" EntityType="Self.Tbl_LeavesTime" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Missions" EntityType="Self.Tbl_Missions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Persmissions" EntityType="Self.Tbl_Persmissions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Personels" EntityType="Self.Tbl_Personels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_ReportMission" EntityType="Self.Tbl_ReportMission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Roles" EntityType="Self.Tbl_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_SettingApp" EntityType="Self.Tbl_SettingApp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Users" EntityType="Self.Tbl_Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Tbl_Attendance_Tbl_Personels" Association="Self.FK_Tbl_Attendance_Tbl_Personels">
+      <End Role="Tbl_Personels" EntitySet="Tbl_Personels" />
+      <End Role="Tbl_Attendance" EntitySet="Tbl_Attendance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Leaves_Tbl_Personels" Association="Self.FK_Tbl_Leaves_Tbl_Personels">
+      <End Role="Tbl_Personels" EntitySet="Tbl_Personels" />
+      <End Role="Tbl_Leaves" EntitySet="Tbl_Leaves" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_LeavesTime_Tbl_Personels" Association="Self.FK_Tbl_LeavesTime_Tbl_Personels">
+      <End Role="Tbl_Personels" EntitySet="Tbl_Personels" />
+      <End Role="Tbl_LeavesTime" EntitySet="Tbl_LeavesTime" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Missions_Tbl_Personels" Association="Self.FK_Tbl_Missions_Tbl_Personels">
+      <End Role="Tbl_Personels" EntitySet="Tbl_Personels" />
+      <End Role="Tbl_Missions" EntitySet="Tbl_Missions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Persmissions_Tbl_Users" Association="Self.FK_Tbl_Persmissions_Tbl_Users">
+      <End Role="Tbl_Users" EntitySet="Tbl_Users" />
+      <End Role="Tbl_Persmissions" EntitySet="Tbl_Persmissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_ReportMission_Tbl_Missions" Association="Self.FK_Tbl_ReportMission_Tbl_Missions">
+      <End Role="Tbl_Missions" EntitySet="Tbl_Missions" />
+      <End Role="Tbl_ReportMission" EntitySet="Tbl_ReportMission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_ReportMission_Tbl_Personels" Association="Self.FK_Tbl_ReportMission_Tbl_Personels">
+      <End Role="Tbl_Personels" EntitySet="Tbl_Personels" />
+      <End Role="Tbl_ReportMission" EntitySet="Tbl_ReportMission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Users_Tbl_Roles" Association="Self.FK_Tbl_Users_Tbl_Roles">
+      <End Role="Tbl_Roles" EntitySet="Tbl_Roles" />
+      <End Role="Tbl_Users" EntitySet="Tbl_Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

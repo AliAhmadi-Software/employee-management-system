@@ -1,0 +1,8 @@
+ private string CalculateTime(string inputStartTime, string inputEndTime)
+        {
+            DateTime startTime = Convert.ToDateTime(inputStartTime);
+            DateTime endtime = Convert.ToDateTime(inputEndTime);
+
+            TimeSpan duration = startTime - endtime;
+            return duration.ToString(@"hh\:mm");
+        }

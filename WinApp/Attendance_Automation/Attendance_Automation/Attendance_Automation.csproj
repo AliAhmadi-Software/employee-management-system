@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1776609-0535-4E2C-9DDD-308D08F10A5E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Attendance_Automation</RootNamespace>
+    <AssemblyName>Attendance_Automation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BPersianCalender">
+      <HintPath>..\..\Attendance_System\Attendance_System\bin\Debug\BPersianCalender.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.4.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\Program\Microsoft SQL Server 2016\130\SDK\Assemblies\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="PersianDate">
+      <HintPath>..\components\PersianDate.dll</HintPath>
+    </Reference>
+    <Reference Include="PopupControl">
+      <HintPath>..\components\PopupControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Controls, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Controls.Win, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Win, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Functions.cs" />
+    <Compile Include="Frm_Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Attendance.Designer.cs">
+      <DependentUpon>Frm_Attendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_AttendanceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AttendanceHistory.Designer.cs">
+      <DependentUpon>Frm_AttendanceHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Backup.Designer.cs">
+      <DependentUpon>Frm_Backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Leaves.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Leaves.Designer.cs">
+      <DependentUpon>Frm_Leaves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_LeavesHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_LeavesHistory.Designer.cs">
+      <DependentUpon>Frm_LeavesHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_LeavesTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_LeavesTime.Designer.cs">
+      <DependentUpon>Frm_LeavesTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_LeavesTimeHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_LeavesTimeHistory.Designer.cs">
+      <DependentUpon>Frm_LeavesTimeHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Login.Designer.cs">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MissionHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MissionHistory.Designer.cs">
+      <DependentUpon>Frm_MissionHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Missions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Missions.Designer.cs">
+      <DependentUpon>Frm_Missions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_OptimizeAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_OptimizeAttendance.Designer.cs">
+      <DependentUpon>Frm_OptimizeAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_OptimizeDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_OptimizeDatabase.Designer.cs">
+      <DependentUpon>Frm_OptimizeDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_OptimizeLeaves.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_OptimizeLeaves.Designer.cs">
+      <DependentUpon>Frm_OptimizeLeaves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_OptimizeLeavesTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_OptimizeLeavesTime.Designer.cs">
+      <DependentUpon>Frm_OptimizeLeavesTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_OptimizeMission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_OptimizeMission.Designer.cs">
+      <DependentUpon>Frm_OptimizeMission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Personels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Personels.Designer.cs">
+      <DependentUpon>Frm_Personels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ReportMission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ReportMission.Designer.cs">
+      <DependentUpon>Frm_ReportMission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Template.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Template.Designer.cs">
+      <DependentUpon>Frm_Template.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Users.Designer.cs">
+      <DependentUpon>Frm_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tbl_Attendance.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tbl_Leaves.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tbl_LeavesTime.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tbl_Missions.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tbl_Persmissions.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tbl_Personels.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tbl_ReportMission.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tbl_Roles.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tbl_SettingApp.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tbl_Users.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_Attendance.resx">
+      <DependentUpon>Frm_Attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_AttendanceHistory.resx">
+      <DependentUpon>Frm_AttendanceHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Backup.resx">
+      <DependentUpon>Frm_Backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Leaves.resx">
+      <DependentUpon>Frm_Leaves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_LeavesHistory.resx">
+      <DependentUpon>Frm_LeavesHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_LeavesTime.resx">
+      <DependentUpon>Frm_LeavesTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_LeavesTimeHistory.resx">
+      <DependentUpon>Frm_LeavesTimeHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Login.resx">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MissionHistory.resx">
+      <DependentUpon>Frm_MissionHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Missions.resx">
+      <DependentUpon>Frm_Missions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_OptimizeAttendance.resx">
+      <DependentUpon>Frm_OptimizeAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_OptimizeDatabase.resx">
+      <DependentUpon>Frm_OptimizeDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_OptimizeLeaves.resx">
+      <DependentUpon>Frm_OptimizeLeaves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_OptimizeLeavesTime.resx">
+      <DependentUpon>Frm_OptimizeLeavesTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_OptimizeMission.resx">
+      <DependentUpon>Frm_OptimizeMission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Personels.resx">
+      <DependentUpon>Frm_Personels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ReportMission.resx">
+      <DependentUpon>Frm_ReportMission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Template.resx">
+      <DependentUpon>Frm_Template.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Users.resx">
+      <DependentUpon>Frm_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="Model\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\pdf_icon.png" />
+    <None Include="Resources\ajax-loader.gif" />
+    <None Include="Resources\write_mission.png" />
+    <None Include="Resources\search-icon.png" />
+    <None Include="Resources\DeleteRed.png" />
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

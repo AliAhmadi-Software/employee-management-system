@@ -1,0 +1,43 @@
+ int Retday(string strtdate, string enddate)
+        {
+
+            int temp = 0, temp1 = 0;
+            int day = 0, day1 = 0;
+
+            temp = Convert.ToInt32(strtdate.Substring(5, 2));
+            temp1 = Convert.ToInt32(strtdate.Substring(8, 2));
+            if (temp > 6)
+            {
+                day = 186 + (temp - 7) * 30;
+                day += temp1;
+            }
+            else
+            {
+                day = (temp - 1) * 31;
+                day += temp1;
+            }
+
+            temp = Convert.ToInt32(enddate.Substring(5, 2));
+            temp1 = Convert.ToInt32(enddate.Substring(8, 2));
+            if (temp > 6)
+            {
+                day1 = 186 + (temp - 7) * 30;
+                day1 += temp1;
+            }
+            else
+            {
+                day1 = (temp - 1) * 31;
+                day1 += temp1;
+            }
+            temp = Convert.ToInt32(strtdate.Substring(0, 4));
+            temp1 = Convert.ToInt32(enddate.Substring(0, 4));
+            if (temp1 == temp)
+            {
+                return day1 - day;
+            }
+            else
+            {
+                return 365 - day + day1;
+            }
+            
+        }

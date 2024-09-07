@@ -1,0 +1,8 @@
+ [DllImport("wininet.dll")]
+        public  extern static bool InternetGetConnectedState(out int Description, int ReservedValue);
+
+        public static bool IsConnectedtoInternet()
+        {
+            int description;
+            return InternetGetConnectedState(out description, 0);
+        }

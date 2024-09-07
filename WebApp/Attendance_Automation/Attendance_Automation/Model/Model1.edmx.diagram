@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="614aafb869124242a87054ce67252af5" Name="Diagram1">
+        <EntityTypeShape EntityType="Attendance_DBModel.Tbl_Attendance" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Attendance_DBModel.Tbl_Leaves" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Attendance_DBModel.Tbl_LeavesTime" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Attendance_DBModel.Tbl_Missions" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Attendance_DBModel.Tbl_Persmissions" Width="1.5" PointX="10.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Attendance_DBModel.Tbl_Personels" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Attendance_DBModel.Tbl_ReportMission" Width="1.5" PointX="6" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Attendance_DBModel.Tbl_Roles" Width="1.5" PointX="5.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Attendance_DBModel.Tbl_SettingApp" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Attendance_DBModel.Tbl_Users" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="Attendance_DBModel.FK_Tbl_Attendance_Tbl_Personels" ManuallyRouted="false" />
+        <AssociationConnector Association="Attendance_DBModel.FK_Tbl_Leaves_Tbl_Personels" ManuallyRouted="false" />
+        <AssociationConnector Association="Attendance_DBModel.FK_Tbl_LeavesTime_Tbl_Personels" ManuallyRouted="false" />
+        <AssociationConnector Association="Attendance_DBModel.FK_Tbl_Missions_Tbl_Personels" ManuallyRouted="false" />
+        <AssociationConnector Association="Attendance_DBModel.FK_Tbl_ReportMission_Tbl_Missions" ManuallyRouted="false" />
+        <AssociationConnector Association="Attendance_DBModel.FK_Tbl_Persmissions_Tbl_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Attendance_DBModel.FK_Tbl_ReportMission_Tbl_Personels" ManuallyRouted="false" />
+        <AssociationConnector Association="Attendance_DBModel.FK_Tbl_Users_Tbl_Roles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
